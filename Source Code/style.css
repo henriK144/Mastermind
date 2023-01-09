@@ -1,0 +1,78 @@
+body {
+  background-color: slategrey;
+}
+
+h1 {
+  text-align: center;
+  font-family: lucida console;
+  color: lime;
+  background-color: black;
+  border: 5px solid darkslategrey;
+  size: 250%;
+}
+
+h2 {
+  text-align: center;
+  font-family: lucida console;
+}
+
+h3 {
+  text-align: center;
+  color:  midnightblue;
+  background-color: rgb(86, 107, 146);
+  font-family: lucida console;
+}
+
+h4 {
+  font-size: 300%;
+  text-align: center;
+}
+
+#win {
+  font-family: cursive;
+  color: limegreen;
+  background-color: azure;
+  border: solid 10px darkslategray;
+}
+
+#lose {
+  font-family: cursive;
+  color: crimson;
+  background-color: lightpink;
+  border: solid 10px darkslategray;
+}
+
+p {
+  color: black;
+  font-family: Franklin Gothic Medium;
+  font-size: 135%;
+}
+
+.feedback {
+  font-size: 160%;
+}
+
+#startButton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 280px;
+  height: 80px;
+  color: rgb(4, 58, 58);
+  border: solid 6px darkblue;
+  font-size: 145%;
+}
+
+#gameColumns {
+  font-size: 400%;
+  font-family: lucida console;
+  color: lime;
+  background-color: black;
+  border: solid 10px darkslategray;
+}
+
+.inputBox {
+  width: 10%;
+  line-height: 3em;
+  font-size: 200%;
+}
