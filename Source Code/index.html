@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Mastermind</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="puzzlepiece.jpg">
+
+  </head>
+  <body>
+
+    <h1 id="titleDisplay">---MASTERMIND---</h1>
+    <br><br>
+    <h3 id="introText"> What is Mastermind? </h3>
+    <br>
+    <div id = "introParagraphs">
+      <p id="paragraph1"> Mastermind is a code-breaking game, originally for two players but replicated here as a singleplayer game against an auto-generated code. You can read about it <a href="https://en.wikipedia.org/wiki/Mastermind_(board_game)" target="_blank" title="Mastermind (board game)">here</a>, but to explain it briefly: </p>
+
+      <p id="paragraph2"> A secret code, consisting of 4 (not necessarily distinct) letters from A to F, will be generated. Your job is to crack it, by making and modifying guesses. After each guess, it will be indicated how "close" your guess is, as explained below. You have 12 guesses. Good luck! </p>
+
+      <p id="paragraph3"> To make a guess, type exactly one capital letter from the set {A,B,C,D,E,F} into each box. After pressing "Enter", you will be shown four icons <ins> in no particular order</ins>: each &#10006 represents a letter which isn't in the code, each &#10004 represents a letter which is in the code but in the wrong position, and each &#9989 represents a letter which is in the code <i>and</i> in the right position. </p>
+    </div>
+
+    <br><br>
+
+    <button id="startButton" type="button" onclick="startGame()">
+      Begin!
+    </button>
+
+    <p style="text-align:left;" id="gameColumns">
+    GUESS:
+    <span style="float:right;">
+        FEEDBACK:
+    </span>
+    </p>
+
+    <br>
+
+    <div id="guessLayers">
+
+      <div id="guessLayer1">
+        <span>01</span>
+        <input id="layer1Box1" class="inputBox" type="text">
+        <input id="layer1Box2" class="inputBox" type="text">
+        <input id="layer1Box3" class="inputBox" type="text">
+        <input id="layer1Box4" class="inputBox" type="text">
+        <button id="enterButton1" onclick="nextTurn()">Enter</button>
+        <span id="feedback1" class="feedback">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </span>
+      </div>
+
+      <div id="guessLayer2">
+        <span>02</span>
+        <input id="layer2Box1" class="inputBox" type="text">
+        <input id="layer2Box2" class="inputBox" type="text">
+        <input id="layer2Box3" class="inputBox" type="text">
+        <input id="layer2Box4" class="inputBox" type="text">
+        <button id="enterButton2" onclick="nextTurn()">Enter</button>
+        <span id="feedback2" class="feedback">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </span>
+      </div>
+
+      <div id="guessLayer3">
+        <span>03</span>
+        <input id = "layer3Box1" class="inputBox" type="text">
+        <input id = "layer3Box2" class="inputBox" type="text">
+        <input id = "layer3Box3" class="inputBox" type="text">
+        <input id = "layer3Box4" class="inputBox" type="text">
+        <button id="enterButton3" onclick="nextTurn()">Enter</button>
+        <span id="feedback3" class="feedback">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </span>
+      </div>
+
+      <div id="guessLayer4">
+        <span>04</span>
+        <input id="layer4Box1" class="inputBox" type="text">
+        <input id="layer4Box2" class="inputBox" type="text">
+        <input id="layer4Box3" class="inputBox" type="text">
+        <input id="layer4Box4" class="inputBox" type="text">
+        <button id="enterButton4" onclick="nextTurn()">Enter</button>
+        <span id="feedback4" class="feedback">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </span>
+      </div>
+
+      <div id="guessLayer5">
+        <span>05</span>
+        <input id = "layer5Box1" class="inputBox" type="text">
+        <input id = "layer5Box2" class="inputBox" type="text">
+        <input id = "layer5Box3" class="inputBox" type="text">
+        <input id = "layer5Box4" class="inputBox" type="text">
+        <button id="enterButton5" onclick="nextTurn()">Enter</button>
+        <span id="feedback5" class="feedback">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </span>
+      </div>
+
+      <div id="guessLayer6">
+        <span>06</span>
+        <input id="layer6Box1" class="inputBox" type="text">
+        <input id="layer6Box2" class="inputBox" type="text">
+        <input id="layer6Box3" class="inputBox" type="text">
+        <input id="layer6Box4" class="inputBox" type="text">
+        <button id="enterButton6" onclick="nextTurn()">Enter</button>
+        <span id="feedback6" class="feedback">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </span>
+      </div>
+
+      <div id="guessLayer7">
+        <span>07</span>
+        <input id="layer7Box1" class="inputBox" type="text">
+        <input id="layer7Box2" class="inputBox" type="text">
+        <input id="layer7Box3" class="inputBox" type="text">
+        <input id="layer7Box4" class="inputBox" type="text">
+        <button id="enterButton7" onclick="nextTurn()">Enter</button>
+        <span id="feedback7" class="feedback">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </span>
+      </div>
+
+      <div id="guessLayer8">
+        <span>08</span>
+        <input id="layer8Box1" class="inputBox" type="text">
+        <input id="layer8Box2" class="inputBox" type="text">
+        <input id="layer8Box3" class="inputBox" type="text">
+        <input id="layer8Box4" class="inputBox" type="text">
+        <button id="enterButton8" onclick="nextTurn()">Enter</button>
+        <span id="feedback8" class="feedback">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </span>
+      </div>
+
+      <div id="guessLayer9">
+        <span>09</span>
+        <input id="layer9Box1" class="inputBox" type="text">
+        <input id="layer9Box2" class="inputBox" type="text">
+        <input id="layer9Box3" class="inputBox" type="text">
+        <input id="layer9Box4" class="inputBox" type="text">
+        <button id="enterButton9" onclick="nextTurn()">Enter</button>
+        <span id="feedback9" class="feedback">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </span>
+      </div>
+
+      <div id="guessLayer10">
+        <span>10</span>
+        <input id="layer10Box1" class="inputBox" type="text">
+        <input id="layer10Box2" class="inputBox" type="text">
+        <input id="layer10Box3" class="inputBox" type="text">
+        <input id="layer10Box4" class="inputBox" type="text">
+        <button id="enterButton10" onclick="nextTurn()">Enter</button>
+        <span id="feedback10" class="feedback">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </span>
+      </div>
+
+      <div id="guessLayer11">
+        <span>11</span>
+        <input id="layer11Box1" class="inputBox" type="text">
+        <input id="layer11Box2" class="inputBox" type="text">
+        <input id="layer11Box3" class="inputBox" type="text">
+        <input id="layer11Box4" class="inputBox" type="text">
+        <button id="enterButton11" onclick="nextTurn()">Enter</button>
+        <span id="feedback11" class="feedback">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </span>
+      </div>
+
+      <div id="guessLayer12">
+        <span>12</span>
+        <input id="layer12Box1" class="inputBox" type="text">
+        <input id="layer12Box2" class="inputBox" type="text">
+        <input id="layer12Box3" class="inputBox" type="text">
+        <input id="layer12Box4" class="inputBox" type="text">
+        <button id="enterButton12" onclick="nextTurn()">Enter</button>
+        <span id="feedback12" class="feedback">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </span>
+      </div>
+
+      <h4 id="win">[ YOU WIN! ]</h4>
+      <h4 id="lose">[ YOU LOSE. ]</h4>
+
+    </div>
+
+
+   <script src="script.js"></script>
+  </body>
+</html>
